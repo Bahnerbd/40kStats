@@ -9,6 +9,8 @@ const TiledImagePage = () => {
   const imgSize = 600;
   const objectiveRadius = s2s(3.75);  // half of 7.5" objective marker
   const innerObjectiveRadius = s2s(1);// half of 2" objective marker
+  const greenOpacity = 0.2;
+  const redOpacity = 0.2;
 
   const baseImages = Array.from({ length: 8 }, (_, i) => ({
     label: `Map ${i + 1}`,
@@ -26,15 +28,15 @@ const TiledImagePage = () => {
         { x: leftOffset + s2s(60-10), y: s2s(22) } // Right
       ],
       shadedAreas: [
-        { type: 'rectangular', color: 'rgba(0, 255, 0, 0.2)', points: [
+        { type: 'rectangular', color: `rgba(0, 255, 0, ${greenOpacity})`, points: [
           { x: leftOffset, y: 0, width: s2s(18), height: s2s(44) }
         ] },
-        { type: 'rectangular', color: 'rgba(255, 0, 0, 0.3)', points: [
+        { type: 'rectangular', color: `rgba(255, 0, 0, ${redOpacity})`, points: [
           { x: leftOffset + s2s(60-18), y: 0, width: s2s(18), height: s2s(44) }
         ] }
       ]
-    },
-    {
+        },
+        {
       label: 'Tipping Point',
       objectives: [
         { x: leftOffset + s2s(22), y: s2s(8) },
@@ -44,21 +46,21 @@ const TiledImagePage = () => {
         { x: leftOffset + s2s(60-22), y: s2s(44-8) }
       ],
       shadedAreas: [
-        { type: 'rectangular', color: 'rgba(0, 255, 0, 0.2)', points: [
+        { type: 'rectangular', color: `rgba(0, 255, 0, ${greenOpacity})`, points: [
           { x: leftOffset, y: 0, width: s2s(12), height: s2s(22) }
         ] },
-        { type: 'rectangular', color: 'rgba(0, 255, 0, 0.2)', points: [
+        { type: 'rectangular', color: `rgba(0, 255, 0, ${greenOpacity})`, points: [
           { x: leftOffset, y: s2s(22), width: s2s(20), height: s2s(22) }
         ] },
-        { type: 'rectangular', color: 'rgba(255, 0, 0, 0.3)', points: [
+        { type: 'rectangular', color: `rgba(255, 0, 0, ${redOpacity})`, points: [
           { x: leftOffset + s2s(60-20), y: 0, width: s2s(20), height: s2s(22) }
         ] },
-        { type: 'rectangular', color: 'rgba(255, 0, 0, 0.3)', points: [
+        { type: 'rectangular', color: `rgba(255, 0, 0, ${redOpacity})`, points: [
           { x: leftOffset + s2s(60-12), y: s2s(22), width: s2s(12), height: s2s(22) }
         ] }
       ]
-    },
-    {
+        },
+        {
       label: 'Crucible of Battle',
       objectives: [
         { x: leftOffset + s2s(20), y: s2s(8) }, // Left
@@ -68,12 +70,12 @@ const TiledImagePage = () => {
         { x: leftOffset + s2s(60-20), y: s2s(44-8) } // Right
       ],
       shadedAreas: [
-        { type: 'triangular', color: 'rgba(0, 255, 0, 0.2)', points: [
+        { type: 'triangular', color: `rgba(0, 255, 0, ${greenOpacity})`, points: [
           { x: leftOffset, y: 0 },
           { x: leftOffset, y: s2s(44) },
           { x: leftOffset + s2s(30), y: s2s(44) }
         ] },
-        { type: 'triangular', color: 'rgba(255, 0, 0, 0.3)', points: [
+        { type: 'triangular', color: `rgba(255, 0, 0, ${redOpacity})`, points: [
           { x: leftOffset + s2s(30), y: 0 },
           { x: leftOffset + s2s(60), y: 0 },
           { x: leftOffset + s2s(60), y: s2s(44) }
@@ -90,12 +92,12 @@ const TiledImagePage = () => {
         { x: leftOffset + s2s(60-14), y: s2s(44-10) } // Right
       ],
       shadedAreas: [
-        { type: 'rectangular', color: 'rgba(0, 255, 0, 0.2)', points: [
+        { type: 'rectangular', color: `rgba(0, 255, 0, ${greenOpacity})`, points: [
             { x: leftOffset, y: s2s(22), width: s2s(30), height: s2s(22) }
           ], 
           subtractCircle: { x: leftOffset + s2s(30), y: s2s(22), radius: s2s(9) } 
         },
-        { type: 'rectangular', color: 'rgba(255, 0, 0, 0.3)', points: [
+        { type: 'rectangular', color: `rgba(255, 0, 0, ${redOpacity})`, points: [
             { x: leftOffset + s2s(30), y: 0, width: s2s(30), height: s2s(22) }
           ], 
           subtractCircle: { x: leftOffset + s2s(30), y: s2s(22), radius: s2s(9) } 
@@ -112,16 +114,16 @@ const TiledImagePage = () => {
         { x: leftOffset + s2s(60-10), y: s2s(44-18) } // Right
       ],
       shadedAreas: [
-        { type: 'rectangular', color: 'rgba(255, 0, 0, 0.3)', points: [
+        { type: 'rectangular', color: `rgba(255, 0, 0, ${redOpacity})`, points: [
           { x: leftOffset, y: 0, width: s2s(30), height: s2s(8) }
         ] },
-        { type: 'rectangular', color: 'rgba(255, 0, 0, 0.3)', points: [
+        { type: 'rectangular', color: `rgba(255, 0, 0, ${redOpacity})`, points: [
           { x: leftOffset + s2s(30), y: 0, width: s2s(30), height: s2s(14) }
         ] },
-        { type: 'rectangular', color: 'rgba(0, 255, 0, 0.2)', points: [
+        { type: 'rectangular', color: `rgba(0, 255, 0, ${greenOpacity})`, points: [
           { x: leftOffset, y: s2s(44-14), width: s2s(30), height: s2s(44) }
         ] },
-        { type: 'rectangular', color: 'rgba(0, 255, 0, 0.2)', points: [
+        { type: 'rectangular', color: `rgba(0, 255, 0, ${greenOpacity})`, points: [
           { x: leftOffset + s2s(30), y: s2s(44-8), width: s2s(30), height: s2s(44) }
         ] },
       ]
@@ -136,10 +138,10 @@ const TiledImagePage = () => {
         { x: leftOffset + s2s(60-10), y: s2s(44-22) } // Right
       ],
       shadedAreas: [
-        { type: 'rectangular', color: 'rgba(0, 255, 0, 0.2)', points: [
+        { type: 'rectangular', color: `rgba(0, 255, 0, ${greenOpacity})`, points: [
           { x: leftOffset, y: 0, width: s2s(60), height: s2s(12) }
         ] },
-        { type: 'rectangular', color: 'rgba(255, 0, 0, 0.3)', points: [
+        { type: 'rectangular', color: `rgba(255, 0, 0, ${redOpacity})`, points: [
           { x: leftOffset, y: s2s(44-12), width: s2s(60), height: s2s(12) }
         ] }
       ]
@@ -157,7 +159,7 @@ const TiledImagePage = () => {
 
   const isCombinationAllowed = (baseLabel: string, overlayLabel: string) => {
     const baseIndex = baseImages.findIndex(base => base.label === baseLabel) + 1;
-    return deploymentZonesLayouts[overlayLabel].includes(baseIndex) ? 1 : 0;
+    return deploymentZonesLayouts[overlayLabel as keyof typeof deploymentZonesLayouts].includes(baseIndex) ? 1 : 0;
   };
 
   return (
@@ -196,16 +198,16 @@ const TiledImagePage = () => {
                               </React.Fragment>
                             ))}
                             <defs>
-                              <pattern id="stripedPattern" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+                              <pattern id="stripedPattern" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(55)">
                                 <rect width="4" height="8" transform="translate(0,0)" fill="yellow" fillOpacity="0.6"></rect>
                                 <rect width="4" height="8" transform="translate(4,0)" fill="black" fillOpacity="0.88"></rect>
                               </pattern>
-                              <pattern id="inversePattern" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
-                                <rect width="4" height="8" transform="translate(0,0)" fill="black" fillOpacity="1"></rect>
-                                <rect width="4" height="8" transform="translate(4,0)" fill="yellow" fillOpacity="1"></rect>
+                              <pattern id="inversePattern" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(-40)">
+                                <rect width="3" height="6" transform="translate(0,0)" fill="black" fillOpacity="1"></rect>
+                                <rect width="3" height="6" transform="translate(3,0)" fill="yellow" fillOpacity="1"></rect>
                               </pattern>
                             </defs>
-                            {overlay.shadedAreas.map((area, areaIndex) => {
+                            {overlay.shadedAreas.map((area: any, areaIndex: number) => {
                               const { subtractCircle } = area;
                               const maskId = `mask-${areaIndex}`;
 
@@ -247,7 +249,7 @@ const TiledImagePage = () => {
                                       );
                                     }
                                     else if (area.type === 'rectangular') {
-                                      return area.points.map((pt, i) => (
+                                      return area.points.map((pt: any, i: number) => (
                                         <rect
                                           key={i}
                                           x={pt.x}
