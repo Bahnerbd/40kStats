@@ -4,6 +4,9 @@ import TiledImagePage from "../components/pages/MapsTiledOverlays";
 
 export default function Home() {
   return (
+    <TiledImagePage />
+  )
+  return (
     <div className="flex flex-col items-center justify-between min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <div className="row-start-1 flex items-center gap-4">
         <TiledImagePage />

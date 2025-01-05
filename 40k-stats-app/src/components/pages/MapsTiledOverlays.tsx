@@ -292,7 +292,7 @@ const TiledImagePage = () => {
         .app-container {
           font-family: Arial, sans-serif;
           padding: 20px;
-          max-width: 1000px;
+          max-width: 95%;
           margin: auto;
         }
 
@@ -301,7 +301,10 @@ const TiledImagePage = () => {
         }
 
         .table-container {
+          max-height: 95vh;
           overflow-x: auto;
+          overflow-y: auto;
+          position: relative;
         }
 
         table {
