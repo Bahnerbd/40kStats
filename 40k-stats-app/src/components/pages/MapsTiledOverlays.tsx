@@ -207,7 +207,7 @@ const TiledImagePage = () => {
                                 <rect width="3" height="6" transform="translate(3,0)" fill="yellow" fillOpacity="1"></rect>
                               </pattern>
                             </defs>
-                            {overlay.shadedAreas.map((area: any, areaIndex: number) => {
+                            {overlay.shadedAreas.map((area: { type: string, color: string, points: { x: number, y: number, width?: number, height?: number }[], subtractCircle?: { x: number, y: number, radius: number } }, areaIndex: number) => {
                               const { subtractCircle } = area;
                               const maskId = `mask-${areaIndex}`;
 
@@ -249,20 +249,20 @@ const TiledImagePage = () => {
                                       );
                                     }
                                     else if (area.type === 'rectangular') {
-                                      return area.points.map((pt: any, i: number) => (
-                                        <rect
-                                          key={i}
-                                          x={pt.x}
-                                          y={pt.y}
-                                          width={pt.width}
-                                          height={pt.height}
-                                          fill={area.color}
-                                          mask={subtractCircle ? `url(#${maskId})` : undefined}
-                                        />
-                                      ));
+                                        return area.points.map((pt: { x: number, y: number, width?: number, height?: number }, i: number) => (
+                                          <rect
+                                            key={i}
+                                            x={pt.x}
+                                            y={pt.y}
+                                            width={pt.width ?? 0}
+                                            height={pt.height ?? 0}
+                                            fill={area.color}
+                                            mask={subtractCircle ? `url(#${maskId})` : undefined}
+                                          />
+                                        ));
                                     }
                                     else if (area.type === 'triangular') {
-                                      const pointsStr = area.points.map(p => `${p.x},${p.y}`).join(' ');
+                                      const pointsStr = area.points.map((p: { x: number, y: number }) => `${p.x},${p.y}`).join(' ');
                                       return (
                                         <polygon
                                           points={pointsStr}
